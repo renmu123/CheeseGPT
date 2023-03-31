@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* overflow: auto; */
+  overflow: auto;
 }
 
 #chatcontainer {
@@ -35,7 +35,7 @@ body {
 
 .header {
   padding: 20px;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -113,6 +113,16 @@ body {
   align-self: flex-start;
   color: #d1d5db;
   width: 75%;
+  position: relative;
+}
+.chat-gpt-bubble::after {
+  content: "翻译";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border-top: 20px solid transparent;
+  border-right: 20px solid #444654;
+  border-bottom: 20px solid transparent; */
 }
 
 .wouter-bubble {
