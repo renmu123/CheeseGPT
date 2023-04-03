@@ -46,7 +46,7 @@ const makeTable = () => {
 makeTable();
 
 const addPunctuations = (t, options) => {
-  const { calls = "喵", halfwidthSymbol = false } = options ?? {};
+  const { calls = "嘎", halfwidthSymbol = false } = options ?? {};
   let a = t.split("");
   let idx = 0;
 

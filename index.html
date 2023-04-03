@@ -24,12 +24,9 @@
       sizes="16x16"
       href="/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script src="catLang.js"></script>
-    <script src="base64.js"></script>
+    <script src="/assets/catLang.js"></script>
+    <script src="/assets/base64.js"></script>
     <link href="style.css" rel="stylesheet" />
-    <link href="font-awesome.all.min.css" rel="stylesheet" />
-
     <title>CheeseGPT</title>
     <meta name="description" content="What if ChatGPT were cheese?" />
   </head>
@@ -61,7 +58,39 @@
                 autocomplete="off"
               />
             </form>
-            <a><i class="fas fa-paper-plane"></i></a>
+            <svg
+              t="1680503398213"
+              class="icon fa-paper-plane"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="1460"
+              width="30"
+              height="30"
+            >
+              <path
+                d="M981.333333 72.533333l-132.266666 699.733334c0 25.6-12.8 46.933333-29.866667 59.733333-4.266667 4.266667-12.8 4.266667-21.333333 4.266667s-17.066667 0-21.333334-4.266667L469.333333 725.333333l298.666667-469.333333-384 426.666667-311.466667-102.4c-21.333333-8.533333-29.866667-21.333333-29.866666-38.4 0-21.333333 21.333333-34.133333 29.866666-38.4L887.466667 64c21.333333-17.066667 42.666667-21.333333 68.266666-17.066667 8.533333 4.266667 17.066667 8.533333 21.333334 17.066667 4.266667 0 4.266667 4.266667 4.266666 8.533333zM473.6 934.4c-4.266667-4.266667-4.266667-8.533333-4.266667-12.8v-132.266667c0-4.266667 4.266667-8.533333 8.533334-12.8 4.266667-4.266667 8.533333-4.266667 12.8-4.266666l93.866666 25.6c4.266667 0 8.533333 4.266667 12.8 12.8 0 4.266667 0 12.8-4.266666 17.066666l-93.866667 106.666667c-8.533333 4.266667-17.066667 8.533333-25.6 0z"
+                p-id="1461"
+                fill="#ececf1"
+              ></path>
+            </svg>
+
+            <svg
+              t="1680504017690"
+              class="icon translate translate-btn"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              p-id="2650"
+              width="20"
+              height="20"
+            >
+              <path
+                d="M379.392 460.8l114.688 114.688-42.496 102.4L307.2 532.48l-168.96 168.96-71.68-72.704L234.496 460.8l-45.056-45.056c-27.136-27.136-51.2-66.56-66.56-108.544h112.64c7.68 14.336 16.896 27.136 26.112 35.84l45.568 46.08 45.056-45.056C382.976 312.32 409.6 247.808 409.6 204.8H0V102.4h256V0h102.4v102.4h256v102.4h-102.4c0 70.144-37.888 161.28-87.04 210.944L378.88 460.8z m196.608 409.6L512 1024H409.6l256-614.4h102.4l256 614.4h-102.4l-64-153.6h-281.6z m42.496-102.4h196.608L716.8 532.48 618.496 768z"
+                p-id="2651"
+                fill="#ececf1"
+              ></path>
+            </svg>
           </div>
           <p class="disclaimer">
             这个站点由
@@ -76,6 +105,104 @@
         </div>
       </div>
     </div>
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div style="display: flex">
+            <input type="text" class="modal-input" placeholder="请输入嘎嘎语" />
+            <button class="modal-btn">翻译成人话</button>
+          </div>
+          <div style="display: flex; margin-top: 20px">
+            <input type="text" class="modal-input-2" placeholder="请输入人话" />
+            <button class="modal-btn-2">翻译成嘎嘎语</button>
+          </div>
+          <p class="modal-output"></p>
+          <button class="copy-btn" style="display: none">复制</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Get the modal
+      var modal = document.querySelector(".modal");
+      // Get the button that opens the modal
+      var btn = document.querySelector(".translate-btn");
+      // Get the <span> element that closes the modal
+      var span = document.querySelector(".close");
+      // When the user clicks the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      const translateBtn = document.querySelector(".modal-btn");
+      const copyBtn = document.querySelector(".copy-btn");
+
+      translateBtn.addEventListener("click", () => {
+        const input = document.querySelector(".modal-input");
+        const output = document.querySelector(".modal-output");
+        const text = input.value;
+        if (text === "") {
+          output.innerHTML = "你还没有输入嘎嘎语喵";
+          copyBtn.style.display = "none";
+
+          return;
+        }
+        if (Miao.isMiao(text)) {
+          const meows = Miao.decode(text);
+          output.innerHTML = meows;
+          copyBtn.style.display = "block";
+        } else {
+          output.innerHTML = "你输入的不是嘎嘎语喵";
+          copyBtn.style.display = "none";
+        }
+      });
+
+      const translateBtn2 = document.querySelector(".modal-btn-2");
+
+      translateBtn2.addEventListener("click", () => {
+        const input = document.querySelector(".modal-input-2");
+        const output = document.querySelector(".modal-output");
+        const text = input.value;
+        if (text === "") {
+          output.innerHTML = "你还没有输入人话";
+          copyBtn.style.display = "none";
+
+          return;
+        }
+        const meows = Miao.encode(text, { calls: "嘎" });
+        output.innerHTML = meows;
+        copyBtn.style.display = "block";
+      });
+
+      copyBtn.addEventListener("click", () => {
+        const output = document.querySelector(".modal-output");
+        const text = output.innerHTML;
+        if (text === "") {
+          return;
+        }
+        const input = document.createElement("input");
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        if (document.execCommand("copy")) {
+          document.execCommand("copy");
+          alert("复制成功");
+        }
+        document.body.removeChild(input);
+      });
+    </script>
 
     <script>
       const userInput = document.getElementById("user-input");
@@ -154,7 +281,7 @@
 
       const infoText = [
         "关注<a href='https://space.bilibili.com/3493139945884106' target='_blank'>雪糕</a>喵，关注<a href='https://space.bilibili.com/3493139945884106' target='_blank'>雪糕</a>谢谢喵！",
-        "大家也要关注<a href='https://www.icheese.club/' target='_blank'>我做的网页</a>喵，虽然还没做完",
+        "大家也要关注我做的雪糕<a href='https://www.icheese.club/' target='_blank'>专属网页</a>喵，虽然还没做完",
         "大家可以关注这个<a href='https://github.com/renmu123/CheeseGPT/' target='_blank'>项目</a>，贡献更多逆天的雪糕麻麻",
         "嘎​‌‌‌​‍‍‍‍‍​‌‌‌‌‌​‍‍‌‌​‍‍​‌‌‍​‍‌‍‌‌​‍‍‌‍‍​‌‌‌​嘎‍‌‍​‍‍‌‌​‌‌‍​‌‌‌​‍‌‍​‍‍‌‌​‌‌‍​‍‍​‍‌‍‍​‌‌‍‌‌​嘎‌‌‍‍‌​‍‍​‍‍‍‍‍​‍‌‌​‍‍‌​‍‍​‍‍‌‌​‌‌‍‌‌​‌‍‌‌​‍‍嘎​‍‌‌‌‍​‍‍‌‌​‌‍‍‌‌​‌‌‍​‌‌‍​‌‌‍‌‌​‍‌‌‍‌​‍‍​‍‌‍‌​嘎‌‍‌‌​‍‌‍‍‍​‌‌‌​‍‌‌‌‌​‍‌‌​‌‌‍‍‍​‍‍​‍‍‍‍‌​‌‍‍‌嘎‌​‍‌‌​‌‌‌​‍‍‍‍‍​‌‌‌‌‌​‍‍‌‌​‍‍​‌‌‍​‍‌‍‌‌​‍‍‌‍‍嘎​‌‌‌​‍‌‍​‍‍‌‌​‌‌‍​‌‌‌​‍‌‍​‍‍‌‌​‌‌‍​‍‍​‍‍​‍‍‌‌​嘎‌‍‌‍‌​‍‍​‍‌​‌‌‌‌‌​‍‍‍‌‍嘎.",
       ]; // Lines of the information chat
