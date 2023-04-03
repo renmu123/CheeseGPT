@@ -112,12 +112,12 @@
         </div>
         <div class="modal-body">
           <div style="display: flex">
-            <input type="text" class="modal-input" placeholder="请输入嘎嘎语" />
+            <input type="text" class="modal-input" placeholder="请输入糕语" />
             <button class="modal-btn">翻译成人话</button>
           </div>
           <div style="display: flex; margin-top: 20px">
             <input type="text" class="modal-input-2" placeholder="请输入人话" />
-            <button class="modal-btn-2">翻译成嘎嘎语</button>
+            <button class="modal-btn-2">翻译成糕语</button>
           </div>
           <p class="modal-output"></p>
           <button class="copy-btn" style="display: none">复制</button>
@@ -154,7 +154,7 @@
         const output = document.querySelector(".modal-output");
         const text = input.value;
         if (text === "") {
-          output.innerHTML = "你还没有输入嘎嘎语喵";
+          output.innerHTML = "你还没有输入糕语喵";
           copyBtn.style.display = "none";
 
           return;
@@ -164,7 +164,7 @@
           output.innerHTML = meows;
           copyBtn.style.display = "block";
         } else {
-          output.innerHTML = "你输入的不是嘎嘎语喵";
+          output.innerHTML = "你输入的不是糕语喵";
           copyBtn.style.display = "none";
         }
       });
@@ -260,7 +260,7 @@
           newBubble2.innerHTML = "...."; // At first, only show an ellipsis
           newBubble2Container.appendChild(newBubble2);
           chatArea.appendChild(newBubble2Container);
-          form.scrollIntoView(); // Scroll down, so the input field is at the bottom of the page again
+          window.scrollTo(0, document.documentElement.scrollHeight);
           let currentMeow = 0;
 
           let meowLoop = setInterval(() => {
@@ -316,7 +316,7 @@
               } else {
                 newBubble3.innerHTML = currentLineText; // When finished, put the entire response in the bubble, without block character
                 clearInterval(singlelineLoop);
-                form.scrollIntoView();
+                window.scrollTo(0, document.documentElement.scrollHeight);
                 userInput.focus(); // Focus the input again, so user can type a new response
                 createLine(i + 1); // Call this function again using i+1 so the next line is created
               }
