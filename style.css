@@ -115,15 +115,12 @@ body {
   width: 75%;
   position: relative;
 }
-.chat-gpt-bubble::after {
+/* .chat-gpt-bubble::after {
   content: "翻译";
   position: absolute;
   top: 0;
   left: 0;
-  /* border-top: 20px solid transparent;
-  border-right: 20px solid #444654;
-  border-bottom: 20px solid transparent; */
-}
+} */
 
 .wouter-bubble {
   align-self: flex-start;
