@@ -198,6 +198,9 @@ body {
   margin-left: 10px;
   cursor: pointer;
 }
+.audio-container {
+  margin-top: 10px;
+}
 
 /* 实现弹框的css */
 #modal {

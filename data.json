@@ -1,41 +1,50 @@
 [
   {
-    "text": "打哈欠",
-    "file": "aa.mp3"
-  },
-  {
-    "text": "是不是又有人在背后说甜甜甜了（打喷嚏）",
-    "file": "aa.mp3"
-  },
-  {
-    "text": "怪叫",
-    "file": "aa.mp3"
-  },
-  {
-    "text": "吃饭声音",
-    "file": "aa.mp3"
-  },
-  {
-    "text": "甜甜甜",
-    "file": "aa.mp3"
-  },
-  {
-    "text": "嘎嘎",
-    "file": "aa.mp3"
-  },
-  {
     "text": "哎呀~棋怎么那么难下啊~还不如派派好玩😕\n烦死了~又输了🙁\n这怎么能输呢~☹️\n不是……本来不是……😫\n什么意思😭我本来不是赢了吗（哭腔）\n这下的什么意思呀😭\n这都输了，丢死人了\n真的不好玩😭围棋😭真的不好玩😭我要去玩游戏了😭真的不好玩😭",
     "file": "/audio/破防.mp3"
   },
   {
-    "text": "撒娇",
-    "file": "撒娇.mp3"
-  },
-  {
     "text": "雪糕土土土小太妹",
-    "file": "雪糕土土土小太妹.mp3"
+    "file": "/audio/小太妹.mp3"
   },
   {
-    "text": "宝宝们睡觉觉了，mua~"
+    "text": "宝宝们睡觉觉了，mua~",
+    "file": "/audio/睡觉觉了.mp3"
+  },
+  {
+    "text": "笑笑哥哥",
+    "file": "/audio/笑笑哥哥.mp3"
+  },
+  {
+    "text": "捷豹哥哥",
+    "file": "/audio/捷豹哥哥.mp3"
+  },
+  {
+    "text": "臭臭菠萝大变身",
+    "file": "/audio/臭臭菠萝大变身.mp3"
+  },
+  {
+    "text": "早安喵",
+    "file": "/audio/早安喵.mp3"
+  },
+  {
+    "text": "天天发财",
+    "file": "/audio/天天发财.mp3"
+  },
+  {
+    "text": "如果我是DJ雪糕，你还会爱我吗？",
+    "file": "https://www.bilibili.com/video/BV1Xk4y1i7SB"
+  },
+  {
+    "text": "如果我是DJ雪糕，你还会爱我吗？",
+    "file": "https://www.bilibili.com/video/BV1Wo4y1q7vN"
+  },
+  {
+    "text": "如果我是DJ雪糕，你还会爱我吗？",
+    "file": "https://www.bilibili.com/video/BV1uM411u7YV"
+  },
+  {
+    "text": "如果我是DJ雪糕，你还会爱我吗？",
+    "file": "https://www.bilibili.com/video/BV1Bx4y1w7Ke"
   }
 ]
