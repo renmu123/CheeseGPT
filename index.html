@@ -28,7 +28,7 @@
       </div>
       <div id="chatcontainer">
         <div id="chat">
-          <div class="chat-bubble-container chat-gpt-bubble-container">
+          <!-- <div class="chat-bubble-container chat-gpt-bubble-container">
             <div class="profile-picture">
               <img src="/images/avatar.png" height="100%" />
             </div>
@@ -66,7 +66,7 @@
                 嘎​‍‍​‍‌‍‌​‌‍‌‌​‍‌‍‍‍​‍‍​‍‌‍‍​‌‍‌‌​‌‌‌‌‍​‍‌‍‍‍​嘎‌‍‌‍‌​‍‍‌‍​‍‌‍‍​‍‌‌‌​‌‌‌​‍‍‌‍​‍‌‌‍​‍‍‍‌​‍‍​‍嘎‍‍‌‍​‌‌‌‌‍​‌‌‌‌‍​‌‍‍‍‌​‌‌‍‌‍​‌‍‍‌​‌‌‌‌‍​‍‌‌​‌‍嘎‌‌‍​‌‍‍‌​‌‌‌‌‍​‌‍‍‍‍​‍‍‌‍​‍‌‌‍​‌‍‌‌​‍‌‌‌‍​‌‍‍‌嘎‍​‍‌‌‌​‌‍‌‌​‌‍‍‍‍​‌‍‍‌‍​‌‍‍‍​‌‍‍‌​‌‍‍‍‍​‌‌‌‍​嘎，‌‌‌‌‍​‌‌‌‌‍​‌‍‍‍‍​‌‍‌​‌‌‌‌‍‌嘎。
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
         <div id="input-area">
           <div id="input-container">
@@ -324,9 +324,10 @@
 
       const infoText = [
         "关注<a href='https://space.bilibili.com/3493139945884106' target='_blank'>雪糕</a>喵，关注<a href='https://space.bilibili.com/3493139945884106' target='_blank'>雪糕</a>谢谢喵！",
-        "也要关注<a href='https://space.bilibili.com/10995238' target='_blank'>暮色312</a>，之后会带来更多整活的",
+        "本项目纯属整活，如果有宝宝不懂糕语的，可以在右下角进行翻译哦",
         "大家也要关注我做的另一个雪糕麻麻的<a href='https://www.icheese.club/' target='_blank'>专属网页</a>喵，虽然还没做完",
         "大家可以关注这个<a href='https://github.com/renmu123/CheeseGPT/' target='_blank'>项目</a>，贡献更多逆天的雪糕麻麻",
+        "也要关注<a href='https://space.bilibili.com/10995238' target='_blank'>暮色312</a>，之后会带来更多整活的",
         "嘎​‌‌‌​‍‍‍‍‍​‌‌‌‌‌​‍‍‌‌​‍‍​‌‌‍​‍‌‍‌‌​‍‍‌‍‍​‌‌‌​嘎‍‌‍​‍‍‌‌​‌‌‍​‌‌‌​‍‌‍​‍‍‌‌​‌‌‍​‍‍​‍‌‍‍​‌‌‍‌‌​嘎‌‌‍‍‌​‍‍​‍‍‍‍‍​‍‌‌​‍‍‌​‍‍​‍‍‌‌​‌‌‍‌‌​‌‍‌‌​‍‍嘎​‍‌‌‌‍​‍‍‌‌​‌‍‍‌‌​‌‌‍​‌‌‍​‌‌‍‌‌​‍‌‌‍‌​‍‍​‍‌‍‌​嘎‌‍‌‌​‍‌‍‍‍​‌‌‌​‍‌‌‌‌​‍‌‌​‌‌‍‍‍​‍‍​‍‍‍‍‌​‌‍‍‌嘎‌​‍‌‌​‌‌‌​‍‍‍‍‍​‌‌‌‌‌​‍‍‌‌​‍‍​‌‌‍​‍‌‍‌‌​‍‍‌‍‍嘎​‌‌‌​‍‌‍​‍‍‌‌​‌‌‍​‌‌‌​‍‌‍​‍‍‌‌​‌‌‍​‍‍​‍‍​‍‍‌‌​嘎‌‍‌‍‌​‍‍​‍‌​‌‌‌‌‌​‍‍‍‌‍嘎.",
       ]; // Lines of the information chat
 
@@ -372,6 +373,8 @@
         }
         createLine(0); // Start creating the respone with the first line
       }
+
+      infoBtn.click(); // Simulate a click on the info button, to show the info text
     </script>
   </body>
 </html>
